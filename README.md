@@ -29,6 +29,29 @@ var ctx = document.getElementById('canvasId'));
 new Chart(ctx, json);
 ```
 
+### Get Started
+#### Maven
+Include this project directly from Gotan Maven repository
+```XML
+<dependency>
+	<groupId>io.gotan.os</groupId>
+	<artifactId>chartjs4java</artifactId>
+	<version>2.6.0-SNAPSHOT</version>
+</dependency>
+```
+
+#### Download
+Downloads for this project at [Gotan Maven OS Repository](https://repository.dev.gotan.io/#browse/browse:gotan.os:io%2Fgotan%2Fos%2Fchartjs4java).
+
+### Documentation
+#### Javadoc
+Browse this project's javadoc at [javadoc.io](https://javadoc.io/doc/be.ceau/chart).
+
+#### Other resources
+The [docs for Chart.js](http://www.chartjs.org/docs/) are a helpful source of info on what's possible and how to achieve it.
+
+
+
 ### Compatibility
 
 Chart.js | Chart.java
@@ -41,28 +64,6 @@ See example charts by running the included unit tests:
 ```XML
 mvn clean compile test
 ```
-
-### Javadoc
-Browse this project's javadoc at [javadoc.io](https://javadoc.io/doc/be.ceau/chart).
-
-### Maven 
-Include this project directly from Gotan Maven repository
-```XML
-<dependency>
-	<groupId>io.gotan.os</groupId>
-	<artifactId>chartjs4java</artifactId>
-	<version>2.6.0</version>
-</dependency>
-```
-
-### Download
-Downloads for this project at [Maven Central](https://repository.dev.gotan.io/#browse/browse:gotan.os:io%2Fgotan%2Fos%2Fchartjs4java).
-
-### Other resources
-The [docs for Chart.js](http://www.chartjs.org/docs/) are a helpful source of info on what's possible and how to achieve it. 
-
-### GnuPG public key
-Verify signature files with my [GnuPG public key](https://www.ceau.be/pubkey.gpg).
 
 ### License
 ChartJS4Java is licensed under [the Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt).   

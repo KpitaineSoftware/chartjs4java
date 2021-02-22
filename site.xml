@@ -1,0 +1,9 @@
+<project>
+  <distributionManagement>
+    <repository>
+      <id>io.gotan.repository</id>
+      <name>Gotan Libraries</name>
+      <url>https://repository.dev.gotan.io/repository/gotan.os/</url>
+    </repository>
+  </distributionManagement>
+</project>
