@@ -1,6 +1,6 @@
 # Chart.java
 
-[![Maven Central badge](https://maven-badges.herokuapp.com/maven-central/be.ceau/chart/badge.svg)](https://mvnrepository.com/artifact/be.ceau/chart)  [![Javadocs](https://javadoc.io/badge/be.ceau/chart.svg)](https://javadoc.io/doc/be.ceau/chart)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+  [![Javadocs](https://javadoc.io/badge/be.ceau/chart.svg)](https://javadoc.io/doc/be.ceau/chart)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 Chart.java enables integration with the excellent [Chart.js](http://www.chartjs.org/) library from within a Java application.
 
@@ -45,18 +45,18 @@ mvn clean compile test
 ### Javadoc
 Browse this project's javadoc at [javadoc.io](https://javadoc.io/doc/be.ceau/chart).
 
-### Maven Central
-Include this project directly from Maven Central
+### Maven 
+Include this project directly from Gotan Maven repository
 ```XML
 <dependency>
-	<groupId>be.ceau</groupId>
-	<artifactId>chart</artifactId>
-	<version>2.3.1</version>
+	<groupId>io.gotan.os</groupId>
+	<artifactId>chartjs4java</artifactId>
+	<version>2.6.0</version>
 </dependency>
 ```
 
 ### Download
-Downloads for this project at [Maven Central](https://repo1.maven.org/maven2/be/ceau/chart/).
+Downloads for this project at [Maven Central](https://repository.dev.gotan.io/#browse/browse:gotan.os:io%2Fgotan%2Fos%2Fchartjs4java).
 
 ### Other resources
 The [docs for Chart.js](http://www.chartjs.org/docs/) are a helpful source of info on what's possible and how to achieve it. 
@@ -65,4 +65,5 @@ The [docs for Chart.js](http://www.chartjs.org/docs/) are a helpful source of in
 Verify signature files with my [GnuPG public key](https://www.ceau.be/pubkey.gpg).
 
 ### License
-Chart.java is licensed under [the Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt).
+ChartJS4Java is licensed under [the Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt).   
+Based and forked from [Chart.java](https://github.com/mdewilde)
