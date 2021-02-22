@@ -47,22 +47,39 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	private String yAxisID;
 
 	/**
+	 * @see #setLine()
+	 */
+	private String type;
+
+	/**
 	 * @see #setBorderSkipped(List)
 	 */
 	private final List<BorderSkipped> borderSkipped = new OptionalArray<BorderSkipped>();
+
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * Support for mixed charts, if type is set to line, the dataset will be considered as a line in chart.js
+	 */
+	public BarDataset setLine() {
+		this.type = "line";
+		return this;
+	}
 
 	/**
 	 * @see #setLabel(String)
 	 */
 	public String getLabel() {
-	    return this.label;
+		return this.label;
 	}
 
 	/**
 	 * The label for the dataset which appears in the legend and tooltips
 	 */
 	public BarDataset setLabel(String label) {
-	    this.label = label;
+		this.label = label;
 		return this;
 	}
 
@@ -70,14 +87,14 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	 * @see #setXAxisID(String)
 	 */
 	public String getXAxisID() {
-	    return this.xAxisID;
+		return this.xAxisID;
 	}
 
 	/**
 	 * The ID of the x axis to plot this dataset on
 	 */
 	public BarDataset setXAxisID(String xAxisID) {
-	    this.xAxisID = xAxisID;
+		this.xAxisID = xAxisID;
 		return this;
 	}
 
@@ -85,14 +102,14 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	 * @see #setYAxisID(String)
 	 */
 	public String getYAxisID() {
-	    return this.yAxisID;
+		return this.yAxisID;
 	}
 
 	/**
 	 * The ID of the y axis to plot this dataset on
 	 */
 	public BarDataset setYAxisID(String yAxisID) {
-	    this.yAxisID = yAxisID;
+		this.yAxisID = yAxisID;
 		return this;
 	}
 
@@ -100,14 +117,14 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	 * @see #setBorderSkipped(List)
 	 */
 	public List<BorderSkipped> getBorderSkipped() {
-	    return this.borderSkipped;
+		return this.borderSkipped;
 	}
 
 	/**
 	 * @see #setBorderSkipped(List)
 	 */
 	public BarDataset addBorderSkipped(BorderSkipped borderSkipped) {
-	    this.borderSkipped.add(borderSkipped);
+		this.borderSkipped.add(borderSkipped);
 		return this;
 	}
 
@@ -115,17 +132,17 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	 * Which edge to skip drawing the border for. Options are 'bottom', 'left', 'top', and 'right'
 	 */
 	public BarDataset setBorderSkipped(List<BorderSkipped> borderSkipped) {
-	    this.borderSkipped.clear();
-	    if (borderSkipped != null) {
-	    	this.borderSkipped.addAll(borderSkipped);
-	    }
+		this.borderSkipped.clear();
+		if (borderSkipped != null) {
+			this.borderSkipped.addAll(borderSkipped);
+		}
 		return this;
 	}
 
 	/**
 	 * Sets the backing data list to the argument, replacing any data already
 	 * added or set
-	 * 
+	 *
 	 * @param data
 	 *            The data to plot in a line
 	 */
@@ -142,7 +159,7 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	/**
 	 * Sets the backing data list to the argument, replacing any data already
 	 * added or set
-	 * 
+	 *
 	 * @param data
 	 *            The data to plot in a line
 	 */
@@ -158,7 +175,7 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 
 	/**
 	 * Add the data point to this {@code Dataset}
-	 * 
+	 *
 	 * @see #setData(Collection)
 	 */
 	public BarDataset addData(int data) {
@@ -177,3 +194,4 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	}
 
 }
+
