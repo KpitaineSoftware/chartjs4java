@@ -47,9 +47,28 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	private String yAxisID;
 
 	/**
-	 * @see #setLine()
 	 */
 	private String type;
+
+	/**
+	 * @see #setLineTension(Float)
+	 */
+	private Float lineTension;
+
+	/**
+	 * @see #setLineTension(Float)
+	 */
+	public Float getLineTension() {
+		return this.lineTension;
+	}
+
+	/**
+	 * Bezier curve tension of the line. Set to 0 to draw straightlines.
+	 */
+	public BarDataset setLineTension(Float lineTension) {
+		this.lineTension = lineTension;
+		return this;
+	}
 
 	/**
 	 * @see #setBorderSkipped(List)
@@ -63,8 +82,13 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	/**
 	 * Support for mixed charts, if type is set to line, the dataset will be considered as a line in chart.js
 	 */
-	public BarDataset setLine() {
+	public BarDataset setLine(boolean shouldSmooth) {
 		this.type = "line";
+		if(shouldSmooth) {
+			this.setLineTension(0.4F);
+		} else {
+			this.setLineTension(0.0F);
+		}
 		return this;
 	}
 
