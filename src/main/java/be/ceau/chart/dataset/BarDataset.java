@@ -55,6 +55,8 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 	 */
 	private Float lineTension;
 
+	private int order;
+
 	/**
 	 * @see #setLineTension(Float)
 	 */
@@ -69,6 +71,12 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 		this.lineTension = lineTension;
 		return this;
 	}
+
+	public BarDataset setOrder(int order) {
+		this.order = order;
+		return this;
+	}
+
 
 	/**
 	 * @see #setBorderSkipped(List)
