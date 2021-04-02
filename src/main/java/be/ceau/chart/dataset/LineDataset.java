@@ -73,11 +73,17 @@ public class LineDataset extends BaseLineDataset<LineDataset, BigDecimal> {
 
 	/**
 	 * Add the data point to this {@code Dataset}
+	 * Data can be null to have a rendering with line breaks
+	 * @link https://stackoverflow.com/questions/34516224/not-drawing-null-values-using-chart-js
 	 *
 	 * @see #setData(Collection)
 	 */
-	public LineDataset addData(double data) {
-		this.data.add(new BigDecimal(String.valueOf(data)));
+	public LineDataset addData(Double data) {
+		if(data == null) {
+			this.data.add(null);
+		} else {
+			this.data.add(new BigDecimal(String.valueOf(data)));
+		}
 		return this;
 	}
 
