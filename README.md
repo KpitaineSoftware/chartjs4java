@@ -39,7 +39,16 @@ Include this project directly from Gotan Maven repository
 	<version>2.6.0-SNAPSHOT</version>
 </dependency>
 ```
-
+<repositories>
+	<repository>
+		<id>gotan</id>
+		<name>Gotan multi-proxies and OpenSource Contributions</name>
+		<url>https://repository.dev.gotan.io/repository/maven-public/</url>
+		<releases><enabled>true</enabled></releases>
+		<snapshots><enabled>true</enabled></snapshots>
+	</repository>
+</repositories>
+```
 #### Download
 Downloads for this project at [Gotan Maven OS Repository](https://repository.dev.gotan.io/#browse/browse:gotan.os:io%2Fgotan%2Fos%2Fchartjs4java).
 
