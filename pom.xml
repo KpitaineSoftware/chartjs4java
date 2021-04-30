@@ -119,6 +119,8 @@
 				<configuration>
 					<source>8</source>
 					<detectJavaApiLink>false</detectJavaApiLink>
+					<additionalJOption>-Xdoclint:none</additionalJOption>
+
 				</configuration>
 				<executions>
 					<execution>
