@@ -60,6 +60,13 @@ public class YAxis<T extends Ticks<T>> {
 	private Boolean stacked;
 
 	/**
+	 * Default {@code false}
+	 *
+	 * @see #setPosition(String position)
+	 */
+	private String position;
+
+	/**
 	 * @see #setTicks(Ticks)
 	 */
 	public T getTicks() {
@@ -134,4 +141,18 @@ public class YAxis<T extends Ticks<T>> {
 		return this;
 	}
 
+	/**
+	 * @see #setPosition(String position)
+	 */
+	public String getPosition() {
+		return this.position;
+	}
+
+	/**
+	 * Position of the vertical axis (RIGHT / LEFT)
+	 */
+	public YAxis<T> setPosition(String position) {
+		this.position = position;
+		return this;
+	}
 }
