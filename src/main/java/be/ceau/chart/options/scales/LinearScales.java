@@ -33,11 +33,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 public class LinearScales {
 
-	private final List<LinearScale> xAxes = new ArrayList<LinearScale>();
+	private final List<Scale> xAxes = new ArrayList<Scale>();
 	
 	private final List<LinearScale> yAxes = new ArrayList<LinearScale>();
 
-	public List<LinearScale> getxAxes() {
+	public List<Scale> getxAxes() {
 		return xAxes;
 	}
 
@@ -46,7 +46,7 @@ public class LinearScales {
 		return this;
 	}
 
-	public LinearScales setxAxes(List<LinearScale> xAxes) {
+	public LinearScales setxAxes(List<Scale> xAxes) {
 		this.xAxes.clear();
 		if (xAxes != null) {
 			this.xAxes.addAll(xAxes);

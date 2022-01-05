@@ -15,6 +15,7 @@
 */
 package be.ceau.chart;
 
+import be.ceau.chart.options.scales.Scale;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -138,7 +139,7 @@ public class ScatterLineChart implements Chart {
 	
 	private boolean hasXAxisWithId(String id) {
 		if (options != null && options.getScales() != null && options.getScales().getxAxes() != null) {
-			for (LinearScale xAxis : options.getScales().getxAxes()) {
+			for (Scale xAxis : options.getScales().getxAxes()) {
 				if (id.equals(xAxis.getId())) {
 					return true;
 				}
