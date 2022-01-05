@@ -26,7 +26,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize(using = JavaScriptFunction.Serializer.class)
 public class JavaScriptFunction {
 
-	private final String function;
+	protected final String function;
 
 	public JavaScriptFunction(String function) {
 		this.function = function;
