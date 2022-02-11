@@ -31,199 +31,201 @@ import be.ceau.chart.objects.OptionalArray;
 @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
 public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDecimal> {
 
-	/**
-	 * @see #setLabel(String)
-	 */
-	private String label;
+    /**
+     * @see #setLabel(String)
+     */
+    private String label;
 
-	/**
-	 * @see #setXAxisID(String)
-	 */
-	private String xAxisID;
+    /**
+     * @see #setXAxisID(String)
+     */
+    private String xAxisID;
 
-	/**
-	 * @see #setYAxisID(String)
-	 */
-	private String yAxisID;
+    /**
+     * @see #setYAxisID(String)
+     */
+    private String yAxisID;
 
-	/**
-	 */
-	private String type;
+    /**
+     *
+     */
+    private String type;
 
-	/**
-	 * @see #setLineTension(Float)
-	 */
-	private Float lineTension;
+    /**
+     * @see #setLineTension(Float)
+     */
+    private Float lineTension;
 
-	private int order;
-
-	/**
-	 * @see #setLineTension(Float)
-	 */
-	public Float getLineTension() {
-		return this.lineTension;
-	}
-
-	/**
-	 * Bezier curve tension of the line. Set to 0 to draw straightlines.
-	 */
-	public BarDataset setLineTension(Float lineTension) {
-		this.lineTension = lineTension;
-		return this;
-	}
-
-	public BarDataset setOrder(int order) {
-		this.order = order;
-		return this;
-	}
+    private int order;
 
 
-	/**
-	 * @see #setBorderSkipped(List)
-	 */
-	private final List<BorderSkipped> borderSkipped = new OptionalArray<BorderSkipped>();
 
-	public String getType() {
-		return type;
-	}
+    /**
+     * @see #setLineTension(Float)
+     */
+    public Float getLineTension() {
+        return this.lineTension;
+    }
 
-	/**
-	 * Support for mixed charts, if type is set to line, the dataset will be considered as a line in chart.js
-	 */
-	public BarDataset setLine(boolean shouldSmooth) {
-		this.type = "line";
-		if(shouldSmooth) {
-			this.setLineTension(0.4F);
-		} else {
-			this.setLineTension(0.0F);
-		}
-		return this;
-	}
+    /**
+     * Bezier curve tension of the line. Set to 0 to draw straightlines.
+     */
+    public BarDataset setLineTension(Float lineTension) {
+        this.lineTension = lineTension;
+        return this;
+    }
 
-	/**
-	 * @see #setLabel(String)
-	 */
-	public String getLabel() {
-		return this.label;
-	}
+    public BarDataset setOrder(int order) {
+        this.order = order;
+        return this;
+    }
 
-	/**
-	 * The label for the dataset which appears in the legend and tooltips
-	 */
-	public BarDataset setLabel(String label) {
-		this.label = label;
-		return this;
-	}
 
-	/**
-	 * @see #setXAxisID(String)
-	 */
-	public String getXAxisID() {
-		return this.xAxisID;
-	}
+    /**
+     * @see #setBorderSkipped(List)
+     */
+    private final List<BorderSkipped> borderSkipped = new OptionalArray<BorderSkipped>();
 
-	/**
-	 * The ID of the x axis to plot this dataset on
-	 */
-	public BarDataset setXAxisID(String xAxisID) {
-		this.xAxisID = xAxisID;
-		return this;
-	}
+    public String getType() {
+        return type;
+    }
 
-	/**
-	 * @see #setYAxisID(String)
-	 */
-	public String getYAxisID() {
-		return this.yAxisID;
-	}
+    /**
+     * Support for mixed charts, if type is set to line, the dataset will be considered as a line in chart.js
+     */
+    public BarDataset setLine(boolean shouldSmooth) {
+        this.type = "line";
+        if (shouldSmooth) {
+            this.setLineTension(0.4F);
+        } else {
+            this.setLineTension(0.0F);
+        }
+        return this;
+    }
 
-	/**
-	 * The ID of the y axis to plot this dataset on
-	 */
-	public BarDataset setYAxisID(String yAxisID) {
-		this.yAxisID = yAxisID;
-		return this;
-	}
+    /**
+     * @see #setLabel(String)
+     */
+    public String getLabel() {
+        return this.label;
+    }
 
-	/**
-	 * @see #setBorderSkipped(List)
-	 */
-	public List<BorderSkipped> getBorderSkipped() {
-		return this.borderSkipped;
-	}
+    /**
+     * The label for the dataset which appears in the legend and tooltips
+     */
+    public BarDataset setLabel(String label) {
+        this.label = label;
+        return this;
+    }
 
-	/**
-	 * @see #setBorderSkipped(List)
-	 */
-	public BarDataset addBorderSkipped(BorderSkipped borderSkipped) {
-		this.borderSkipped.add(borderSkipped);
-		return this;
-	}
+    /**
+     * @see #setXAxisID(String)
+     */
+    public String getXAxisID() {
+        return this.xAxisID;
+    }
 
-	/**
-	 * Which edge to skip drawing the border for. Options are 'bottom', 'left', 'top', and 'right'
-	 */
-	public BarDataset setBorderSkipped(List<BorderSkipped> borderSkipped) {
-		this.borderSkipped.clear();
-		if (borderSkipped != null) {
-			this.borderSkipped.addAll(borderSkipped);
-		}
-		return this;
-	}
+    /**
+     * The ID of the x axis to plot this dataset on
+     */
+    public BarDataset setXAxisID(String xAxisID) {
+        this.xAxisID = xAxisID;
+        return this;
+    }
 
-	/**
-	 * Sets the backing data list to the argument, replacing any data already
-	 * added or set
-	 *
-	 * @param data
-	 *            The data to plot in a line
-	 */
-	public BarDataset setData(int... data) {
-		clearData();
-		if (data != null) {
-			for (int i = 0; i < data.length; i++) {
-				this.data.add(new BigDecimal(data[i]));
-			}
-		}
-		return this;
-	}
+    /**
+     * @see #setYAxisID(String)
+     */
+    public String getYAxisID() {
+        return this.yAxisID;
+    }
 
-	/**
-	 * Sets the backing data list to the argument, replacing any data already
-	 * added or set
-	 *
-	 * @param data
-	 *            The data to plot in a line
-	 */
-	public BarDataset setData(double... data) {
-		clearData();
-		if (data != null) {
-			for (int i = 0; i < data.length; i++) {
-				this.data.add(new BigDecimal(String.valueOf(data[i])));
-			}
-		}
-		return this;
-	}
+    /**
+     * The ID of the y axis to plot this dataset on
+     */
+    public BarDataset setYAxisID(String yAxisID) {
+        this.yAxisID = yAxisID;
+        return this;
+    }
 
-	/**
-	 * Add the data point to this {@code Dataset}
-	 *
-	 * @see #setData(Collection)
-	 */
-	public BarDataset addData(int data) {
-		this.data.add(new BigDecimal(data));
-		return this;
-	}
+    /**
+     * @see #setBorderSkipped(List)
+     */
+    public List<BorderSkipped> getBorderSkipped() {
+        return this.borderSkipped;
+    }
 
-	/**
-	 * Add the data point to this {@code Dataset}
-	 *
-	 * @see #setData(Collection)
-	 */
-	public BarDataset addData(double data) {
-		this.data.add(new BigDecimal(String.valueOf(data)));
-		return this;
-	}
+    /**
+     * @see #setBorderSkipped(List)
+     */
+    public BarDataset addBorderSkipped(BorderSkipped borderSkipped) {
+        this.borderSkipped.add(borderSkipped);
+        return this;
+    }
+
+    /**
+     * Which edge to skip drawing the border for. Options are 'bottom', 'left', 'top', and 'right'
+     */
+    public BarDataset setBorderSkipped(List<BorderSkipped> borderSkipped) {
+        this.borderSkipped.clear();
+        if (borderSkipped != null) {
+            this.borderSkipped.addAll(borderSkipped);
+        }
+        return this;
+    }
+
+    /**
+     * Sets the backing data list to the argument, replacing any data already
+     * added or set
+     *
+     * @param data The data to plot in a line
+     */
+    public BarDataset setData(int... data) {
+        clearData();
+        if (data != null) {
+            for (int i = 0; i < data.length; i++) {
+                this.data.add(new BigDecimal(data[i]));
+            }
+        }
+        return this;
+    }
+
+    /**
+     * Sets the backing data list to the argument, replacing any data already
+     * added or set
+     *
+     * @param data The data to plot in a line
+     */
+    public BarDataset setData(double... data) {
+        clearData();
+        if (data != null) {
+            for (int i = 0; i < data.length; i++) {
+                this.data.add(new BigDecimal(String.valueOf(data[i])));
+            }
+        }
+        return this;
+    }
+
+    /**
+     * Add the data point to this {@code Dataset}
+     *
+     * @see #setData(Collection)
+     */
+    public BarDataset addData(int data) {
+        this.data.add(new BigDecimal(data));
+        return this;
+    }
+
+    /**
+     * Add the data point to this {@code Dataset}
+     *
+     * @see #setData(Collection)
+     */
+    public BarDataset addData(double data) {
+        this.data.add(new BigDecimal(String.valueOf(data)));
+        return this;
+    }
+
 
 }
 
