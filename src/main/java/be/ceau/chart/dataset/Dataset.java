@@ -15,6 +15,9 @@
 */
 package be.ceau.chart.dataset;
 
+import be.ceau.chart.enums.DataLabelsAlign;
+import be.ceau.chart.enums.DataLabelsAnchor;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,6 +30,9 @@ public abstract class Dataset<T extends Dataset<T, O>, O> {
 	 * @see #setData(Collection)
 	 */
 	protected final List<O> data = new ArrayList<O>();
+
+
+	private DataLabels datalabels;
 
 	/**
 	 * @return an unmodifiable view of the data held in this {@code Dataset},
@@ -89,6 +95,22 @@ public abstract class Dataset<T extends Dataset<T, O>, O> {
 	public T addData(O data) {
 		this.data.add(data);
 		return (T) this;
+	}
+
+	public void setDatalabels(DataLabels dl) {
+		this.datalabels = dl;
+	}
+
+	public void setDatalabels(boolean display) {
+		this.datalabels = new DataLabels(display);
+	}
+
+	public void setDatalabels(DataLabelsAlign align, DataLabelsAnchor anchor) {
+		this.datalabels = new DataLabels(align, anchor);
+	}
+
+	public DataLabels getDatalabels() {
+		return datalabels;
 	}
 
 }

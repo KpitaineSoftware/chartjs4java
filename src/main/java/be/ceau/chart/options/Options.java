@@ -46,6 +46,7 @@ public class Options<T extends Options<T>> {
 	private Hover hover;
 	private Animation<?> animation;
 	private Layout layout;
+	private Plugins plugins;
 
 	/**
 	 * @see #setResponsive(Boolean)
@@ -283,4 +284,11 @@ public class Options<T extends Options<T>> {
 		return (T) this;
 	}
 
+	public Plugins getPlugins() {
+		return plugins;
+	}
+
+	public void setPlugins(Plugins plugins) {
+		this.plugins = plugins;
+	}
 }
