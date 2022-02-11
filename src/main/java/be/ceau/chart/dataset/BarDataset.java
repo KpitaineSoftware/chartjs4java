@@ -19,6 +19,8 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import be.ceau.chart.enums.PointStyle;
+import be.ceau.chart.options.elements.Fill;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -56,7 +58,20 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
      */
     private Float lineTension;
 
+    private Fill fill;
+
+
+    /** Point Radius :
+     * Mix line / bar chart type case
+     */
+    private List<Integer> pointRadius;
+    /** Point Radius :
+     * Mix line / bar chart type case
+     */
+    private List<PointStyle> pointStyle;
+
     private int order;
+
 
 
 
@@ -227,5 +242,31 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
     }
 
 
+    public Fill getFill() {
+        return fill;
+    }
+
+    public BarDataset setFill(Fill fill) {
+        this.fill = fill;
+        return this;
+    }
+
+    public List<Integer> getPointRadius() {
+        return pointRadius;
+    }
+
+    public BarDataset setPointRadius(List<Integer> pointRadius) {
+        this.pointRadius = pointRadius;
+        return this;
+    }
+
+    public List<PointStyle> getPointStyle() {
+        return pointStyle;
+    }
+
+    public BarDataset setPointStyle(List<PointStyle> pointStyle) {
+        this.pointStyle = pointStyle;
+        return this;
+    }
 }
 
