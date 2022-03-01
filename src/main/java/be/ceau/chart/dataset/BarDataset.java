@@ -19,6 +19,7 @@ import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
+import be.ceau.chart.color.Color;
 import be.ceau.chart.enums.PointStyle;
 import be.ceau.chart.options.elements.Fill;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -69,6 +70,12 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
      * Mix line / bar chart type case
      */
     private List<PointStyle> pointStyle;
+
+    /** Point color
+     * * Mix line / bar chart type case
+     */
+    private List<Color> pointBackgroundColor;
+    private List<Color> pointBorderColor;
 
     private int order;
 
@@ -266,6 +273,24 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
 
     public BarDataset setPointStyle(List<PointStyle> pointStyle) {
         this.pointStyle = pointStyle;
+        return this;
+    }
+
+    public List<Color> getPointBackgroundColor() {
+        return pointBackgroundColor;
+    }
+
+    public BarDataset setPointBackgroundColor(List<Color> pointBackgroundColor) {
+        this.pointBackgroundColor = pointBackgroundColor;
+        return this;
+    }
+
+    public List<Color> getPointBorderColor() {
+        return pointBorderColor;
+    }
+
+    public BarDataset setPointBorderColor(List<Color> pointBorderColor) {
+        this.pointBorderColor = pointBorderColor;
         return this;
     }
 }
