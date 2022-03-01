@@ -15,12 +15,16 @@
 */
 package be.ceau.chart.options.layout;
 
+import be.ceau.chart.color.Color;
+
 /**
  * Options to influence the layout of the chart in its canvas.
  */
 public class Layout {
 
 	private Object padding;
+
+	private Color backgroundColor;
 
 	public Object getPadding() {
 		return padding;
@@ -77,4 +81,11 @@ public class Layout {
 		return this;
 	}
 
+	public Color getBackgroundColor() {
+		return backgroundColor;
+	}
+
+	public void setBackgroundColor(Color backgroundColor) {
+		this.backgroundColor = backgroundColor;
+	}
 }
