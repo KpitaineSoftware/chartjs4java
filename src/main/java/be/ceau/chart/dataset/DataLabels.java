@@ -2,6 +2,8 @@ package be.ceau.chart.dataset;
 
 import be.ceau.chart.enums.DataLabelsAlign;
 import be.ceau.chart.enums.DataLabelsAnchor;
+import be.ceau.chart.javascript.JavaScriptFunction;
+import be.ceau.chart.options.Font;
 
 /**
  * DataLabels management.
@@ -12,6 +14,9 @@ public class DataLabels {
     private boolean display;
     private DataLabelsAnchor anchor;
     private DataLabelsAlign align;
+    private Font font;
+
+    private JavaScriptFunction formatter;
 
     public DataLabels() {
     }
@@ -48,6 +53,22 @@ public class DataLabels {
 
     public void setDisplay(boolean display) {
         this.display = display;
+    }
+
+    public Font getFont() {
+        return font;
+    }
+
+    public void setFont(Font font) {
+        this.font = font;
+    }
+
+    public JavaScriptFunction getFormatter() {
+        return formatter;
+    }
+
+    public void setFormatter(JavaScriptFunction formatter) {
+        this.formatter = formatter;
     }
 }
 

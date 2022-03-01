@@ -15,4 +15,5 @@ public class DatalabelsPlugin {
     public void setDisplay(boolean display) {
         this.display = display;
     }
+
 }
