@@ -4,12 +4,16 @@ import be.ceau.chart.enums.DataLabelsAlign;
 import be.ceau.chart.enums.DataLabelsAnchor;
 import be.ceau.chart.javascript.JavaScriptFunction;
 import be.ceau.chart.options.Font;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  * DataLabels management.
  *
  * @see <a href="https://chartjs-plugin-datalabels.netlify.app/">ChartJS DataLabels plugins</a>
  */
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
 public class DataLabels {
     private boolean display;
     private DataLabelsAnchor anchor;
