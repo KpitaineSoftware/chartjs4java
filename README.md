@@ -1,4 +1,4 @@
-# Chart.java
+# ChartJS for java
 
   [![Javadocs](https://javadoc.io/badge/be.ceau/chart.svg)](https://javadoc.io/doc/be.ceau/chart)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
@@ -36,7 +36,7 @@ Include this project directly from Gotan Maven repository
 <dependency>
 	<groupId>io.gotan.os</groupId>
 	<artifactId>chartjs4java</artifactId>
-	<version>2.6.0-SNAPSHOT</version>
+	<version>2.6.0.7</version>
 </dependency>
 ```
 <repositories>
@@ -49,10 +49,13 @@ Include this project directly from Gotan Maven repository
 	</repository>
 </repositories>
 ```
+
+
 #### Download
 Downloads for this project at [Gotan Maven OS Repository](https://repository.dev.gotan.io/#browse/browse:gotan.os:io%2Fgotan%2Fos%2Fchartjs4java).
 
 ### Documentation
+
 #### Javadoc
 Browse this project's javadoc at [javadoc.io](https://javadoc.io/doc/be.ceau/chart).
 
