@@ -18,99 +18,101 @@ package be.ceau.chart.dataset;
 import be.ceau.chart.enums.DataLabelsAlign;
 import be.ceau.chart.enums.DataLabelsAnchor;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class Dataset<T extends Dataset<T, O>, O> {
 
-	/**
-	 * @see #setData(Collection)
-	 */
-	protected final List<O> data = new ArrayList<O>();
+    /**
+     * @see #setData(Collection)
+     */
+    protected final List<O> data = new ArrayList<O>();
 
 
-	private DataLabels datalabels;
+    private DataLabels datalabels;
 
-	/**
-	 * @return an unmodifiable view of the data held in this {@code Dataset},
-	 *         never {@code null}
-	 */
-	public List<O> getData() {
-		return Collections.unmodifiableList(this.data);
-	}
+    private TrendlineLinear trendlineLinear;
 
-	/**
-	 * Sets the backing data list to the argument, replacing any data already
-	 * added or set
-	 * 
-	 * @param data
-	 *            The data to plot in a line
-	 */
-	@SuppressWarnings("unchecked")
-	public T setData(Collection<O> data) {
-		clearData();
-		if (data != null) {
-			this.data.addAll(data);
-		}
-		return (T) this;
-	}
+    /**
+     * @return an unmodifiable view of the data held in this {@code Dataset},
+     * never {@code null}
+     */
+    public List<O> getData() {
+        return Collections.unmodifiableList(this.data);
+    }
 
-	/**
-	 * Sets the backing data list to the argument, replacing any data already
-	 * added or set
-	 * 
-	 * @param data
-	 *            The data to plot in a line
-	 */
-	@SuppressWarnings("unchecked")
-	public T setData(O... data) {
-		clearData();
-		if (data != null) {
-			this.data.addAll(Arrays.asList(data));
-		}
-		return (T) this;
-	}
+    /**
+     * Sets the backing data list to the argument, replacing any data already
+     * added or set
+     *
+     * @param data The data to plot in a line
+     */
+    @SuppressWarnings("unchecked")
+    public T setData(Collection<O> data) {
+        clearData();
+        if (data != null) {
+            this.data.addAll(data);
+        }
+        return (T) this;
+    }
 
-	/**
-	 * Remove all data held by this {@code Dataset}
-	 */
-	@SuppressWarnings("unchecked")
-	public T clearData() {
-		this.data.clear();
-		return (T) this;
-	}
+    /**
+     * Sets the backing data list to the argument, replacing any data already
+     * added or set
+     *
+     * @param data The data to plot in a line
+     */
+    @SuppressWarnings("unchecked")
+    public T setData(O... data) {
+        clearData();
+        if (data != null) {
+            this.data.addAll(Arrays.asList(data));
+        }
+        return (T) this;
+    }
 
-	/**
-	 * Add the data point to this {@code Dataset}
-	 * 
-	 * @param data
-	 *            a {@code O}, can be {@code null} to signify absence of data
-	 *            for a given point
-	 * @see #setData(Collection)
-	 */
-	@SuppressWarnings("unchecked")
-	public T addData(O data) {
-		this.data.add(data);
-		return (T) this;
-	}
+    /**
+     * Remove all data held by this {@code Dataset}
+     */
+    @SuppressWarnings("unchecked")
+    public T clearData() {
+        this.data.clear();
+        return (T) this;
+    }
 
-	public void setDatalabels(DataLabels dl) {
-		this.datalabels = dl;
-	}
+    /**
+     * Add the data point to this {@code Dataset}
+     *
+     * @param data a {@code O}, can be {@code null} to signify absence of data
+     *             for a given point
+     * @see #setData(Collection)
+     */
+    @SuppressWarnings("unchecked")
+    public T addData(O data) {
+        this.data.add(data);
+        return (T) this;
+    }
 
-	public void setDatalabels(boolean display) {
-		this.datalabels = new DataLabels(display);
-	}
+    public void setDatalabels(DataLabels dl) {
+        this.datalabels = dl;
+    }
 
-	public void setDatalabels(DataLabelsAlign align, DataLabelsAnchor anchor) {
-		this.datalabels = new DataLabels(align, anchor);
-	}
+    public void setDatalabels(boolean display) {
+        this.datalabels = new DataLabels(display);
+    }
 
-	public DataLabels getDatalabels() {
-		return datalabels;
-	}
+    public void setDatalabels(DataLabelsAlign align, DataLabelsAnchor anchor) {
+        this.datalabels = new DataLabels(align, anchor);
+    }
 
+    public DataLabels getDatalabels() {
+        return datalabels;
+    }
+
+    public TrendlineLinear getTrendlineLinear() {
+        return trendlineLinear;
+    }
+
+    public void setTrendlineLinear(TrendlineLinear trendlineLinear) {
+        this.trendlineLinear = trendlineLinear;
+    }
 }
