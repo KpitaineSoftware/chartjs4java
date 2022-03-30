@@ -39,6 +39,8 @@ Include this project directly from Gotan Maven repository
 	<version>2.6.0.7</version>
 </dependency>
 ```
+Add custom repository
+```XML
 <repositories>
 	<repository>
 		<id>gotan</id>
