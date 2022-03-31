@@ -9,11 +9,21 @@ public class Plugins {
 
     DatalabelsPlugin datalabels;
 
+    Boolean trendlineLinear;
+
     public DatalabelsPlugin getDatalabels() {
         return datalabels;
     }
 
     public void setDatalabels(DatalabelsPlugin datalabels) {
         this.datalabels = datalabels;
+    }
+
+    public Boolean getTrendlineLinear() {
+        return trendlineLinear;
+    }
+
+    public void setTrendlineLinear(Boolean trendlineLinear) {
+        this.trendlineLinear = trendlineLinear;
     }
 }
