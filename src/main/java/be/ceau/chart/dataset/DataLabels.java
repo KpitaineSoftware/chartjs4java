@@ -1,5 +1,6 @@
 package be.ceau.chart.dataset;
 
+import be.ceau.chart.color.Color;
 import be.ceau.chart.enums.DataLabelsAlign;
 import be.ceau.chart.enums.DataLabelsAnchor;
 import be.ceau.chart.javascript.JavaScriptFunction;
@@ -19,6 +20,7 @@ public class DataLabels {
     private DataLabelsAnchor anchor;
     private DataLabelsAlign align;
     private Font font;
+    private Color color;
 
     private JavaScriptFunction formatter;
 
@@ -27,6 +29,13 @@ public class DataLabels {
 
     public DataLabels(boolean display) {
         this.display = display;
+    }
+
+    public DataLabels(DataLabelsAnchor anchor, DataLabelsAlign align, Color color) {
+        this.display = true;
+        this.anchor = anchor;
+        this.align = align;
+        this.color = color;
     }
 
     public DataLabels(DataLabelsAlign align, DataLabelsAnchor anchor) {
@@ -73,6 +82,14 @@ public class DataLabels {
 
     public void setFormatter(JavaScriptFunction formatter) {
         this.formatter = formatter;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
 
