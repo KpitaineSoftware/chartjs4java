@@ -2,6 +2,8 @@ package be.ceau.chart.tests;
 
 import java.io.IOException;
 
+import be.ceau.chart.options.scales.Axis;
+import be.ceau.chart.options.scales.YAxis;
 import org.junit.Test;
 
 import be.ceau.chart.BarChart;
@@ -41,8 +43,8 @@ public class TickTest {
 				.setMax(100)
 				.setStepSize(10);
 
-		BarScale barScale = new BarScale()
-				.addyAxes(BarScale.yAxis().setTicks(ticks));
+		YAxis<LinearTicks> yaxe = (YAxis<LinearTicks>) BarScale.yAxis().setTicks(ticks);
+		BarScale barScale = new BarScale().addyAxes(yaxe);
 
 		BarOptions options = BarChart.options()
 				.setScales(barScale);

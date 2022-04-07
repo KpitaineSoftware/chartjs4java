@@ -2,7 +2,7 @@
 
   [![Javadocs](https://javadoc.io/badge/be.ceau/chart.svg)](https://javadoc.io/doc/be.ceau/chart)  [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
-Chart.java enables integration with the excellent [Chart.js](http://www.chartjs.org/) library from within a Java application.
+Chart.java enables integration with the excellent [Chart.js](http://www.chartjs.org/) library (version 2.x) from within a Java application.
 
 ### Usage example
 

@@ -57,7 +57,7 @@ public class BarScale extends CategoryScale {
 	/**
 	 * @see #setyAxes(List)
 	 */
-	private final List<YAxis<LinearTicks>> yAxes = new ArrayList<YAxis<LinearTicks>>();
+	private final List<Axis<LinearTicks>> yAxes = new ArrayList<Axis<LinearTicks>>();
 
 	/**
 	 * @see #setxAxes(List)
@@ -98,14 +98,14 @@ public class BarScale extends CategoryScale {
 	/**
 	 * @see #setyAxes(List)
 	 */
-	public List<YAxis<LinearTicks>> getyAxes() {
+	public List<Axis<LinearTicks>> getyAxes() {
 		return yAxes;
 	}
 
 	/**
 	 * @see #setyAxes(List)
 	 */
-	public BarScale addyAxes(YAxis<LinearTicks> yAxis) {
+	public BarScale addyAxes(Axis<LinearTicks> yAxis) {
 		if (yAxis != null) {
 			this.yAxes.add(yAxis);
 		}

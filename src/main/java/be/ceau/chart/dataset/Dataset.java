@@ -28,6 +28,8 @@ public abstract class Dataset<T extends Dataset<T, O>, O> {
     protected final List<O> data = new ArrayList<O>();
 
 
+    protected List<String> labels;
+
     private DataLabels datalabels;
 
     private TrendlineLinear trendlineLinear;
@@ -114,5 +116,13 @@ public abstract class Dataset<T extends Dataset<T, O>, O> {
 
     public void setTrendlineLinear(TrendlineLinear trendlineLinear) {
         this.trendlineLinear = trendlineLinear;
+    }
+
+    public List<String> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
     }
 }

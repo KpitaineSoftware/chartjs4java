@@ -15,6 +15,7 @@
 */
 package be.ceau.chart;
 
+import be.ceau.chart.options.scales.Axis;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -31,7 +32,6 @@ import be.ceau.chart.dataset.BarDataset;
 import be.ceau.chart.options.BarOptions;
 import be.ceau.chart.options.Options;
 import be.ceau.chart.options.scales.XAxis;
-import be.ceau.chart.options.scales.YAxis;
 import be.ceau.chart.options.ticks.LinearTicks;
 
 @JsonInclude(Include.NON_EMPTY)
@@ -212,7 +212,7 @@ public class BarChart implements Chart {
 
 	private boolean hasYAxisWithId(String id) {
 		if (options != null && options.getScales() != null && options.getScales().getyAxes() != null) {
-			for (YAxis<LinearTicks> yAxis : options.getScales().getyAxes()) {
+			for (Axis<LinearTicks> yAxis : options.getScales().getyAxes()) {
 				if (id.equals(yAxis.getId())) {
 					return true;
 				}

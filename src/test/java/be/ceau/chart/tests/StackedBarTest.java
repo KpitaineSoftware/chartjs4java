@@ -22,6 +22,7 @@ import be.ceau.chart.data.BarData;
 import be.ceau.chart.dataset.BarDataset;
 import be.ceau.chart.options.BarOptions;
 import be.ceau.chart.options.scales.BarScale;
+import be.ceau.chart.options.scales.XAxis;
 import be.ceau.chart.options.ticks.LinearTicks;
 
 /**
@@ -54,7 +55,7 @@ public class StackedBarTest extends ChartTest {
 				.setStepSize(5);
 
 		BarScale scale = new BarScale()
-				.addxAxes(BarScale.xAxis().setStacked(true))
+				.addxAxes((XAxis<LinearTicks>) BarScale.xAxis().setStacked(true))
 				.addyAxes(BarScale.yAxis().setTicks(ticks).setStacked(true));
 
 		BarOptions options = new BarOptions()
