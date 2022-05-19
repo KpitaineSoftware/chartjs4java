@@ -48,6 +48,36 @@ public abstract class Axis<T extends Ticks<T>> {
      */
     private String position;
 
+    private Time time;
+
+    private boolean offset;
+
+    private String distribution = "linear";
+
+    public String getDistribution() {
+        return distribution;
+    }
+
+    public void setDistribution(String distribution) {
+        this.distribution = distribution;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    public boolean isOffset() {
+        return offset;
+    }
+
+    public void setOffset(boolean offset) {
+        this.offset = offset;
+    }
+
     /**
      * @see #setTicks(Ticks)
      */
