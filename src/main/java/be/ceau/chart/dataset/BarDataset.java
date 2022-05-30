@@ -248,6 +248,16 @@ public class BarDataset extends BackgroundBorderHoverDataset<BarDataset, BigDeci
         return this;
     }
 
+    /**
+     * Add null value in List
+     *
+     * @return
+     */
+    public BarDataset addNullDataValue(){
+        this.data.add(null);
+        return this;
+    }
+
 
     public Fill getFill() {
         return fill;
