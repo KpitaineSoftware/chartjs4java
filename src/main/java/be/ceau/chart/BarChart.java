@@ -16,6 +16,7 @@
 package be.ceau.chart;
 
 import be.ceau.chart.options.scales.Axis;
+import be.ceau.chart.plugin.Plugin;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -33,6 +34,8 @@ import be.ceau.chart.options.BarOptions;
 import be.ceau.chart.options.Options;
 import be.ceau.chart.options.scales.XAxis;
 import be.ceau.chart.options.ticks.LinearTicks;
+
+import java.util.List;
 
 @JsonInclude(Include.NON_EMPTY)
 @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE, isGetterVisibility = Visibility.NONE)
@@ -66,6 +69,8 @@ public class BarChart implements Chart {
 	private boolean vertical = true;
 
 	private BarData data;
+
+	private List<Plugin> plugins;
 
 	private BarOptions options;
 
@@ -219,6 +224,24 @@ public class BarChart implements Chart {
 			}
 		}
 		return false;
+	}
+
+	public void setVertical(boolean vertical) {
+		this.vertical = vertical;
+	}
+
+	public List<Plugin> getPlugins() {
+		return plugins;
+	}
+
+	public void setPlugins(List<Plugin> plugins) {
+		this.plugins = plugins;
+	}
+
+	public void addPlugin(Plugin plugin) {
+		if(this.plugins !=null){
+			plugins.add(plugin);
+		}
 	}
 
 }

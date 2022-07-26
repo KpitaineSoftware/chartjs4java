@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import be.ceau.chart.color.Color;
+import be.ceau.chart.color.GradientColor;
 import be.ceau.chart.objects.OptionalArray;
 
 public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHoverDataset<T, O>, O> extends Dataset<T, O> {
@@ -27,6 +28,9 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	 * @see #setBackgroundColor(List)
 	 */
 	protected final List<Color> backgroundColor = new OptionalArray<Color>();
+
+
+	protected final List<GradientColor> backgroundGradientColor = new OptionalArray<GradientColor>();
 
 	/**
 	 * @see #setBorderColor(List)
@@ -60,6 +64,10 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	    return this.backgroundColor;
 	}
 
+	public List<GradientColor> getBackgroundGradientColor() {
+		return backgroundGradientColor;
+	}
+
 	/**
 	 * @see #setBackgroundColor(List)
 	 */
@@ -69,6 +77,14 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	    	this.backgroundColor.add(backgroundColor);
 	    }
 	    return (T) this;
+	}
+
+
+	public T addBackgroundGradientColor(GradientColor gradientColor) {
+		if (backgroundGradientColor != null) {
+			this.backgroundGradientColor.add(gradientColor);
+		}
+		return (T) this;
 	}
 
 	/**
@@ -82,6 +98,13 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	    return (T) this;
 	}
 
+	public T addBackgroundGradientColors(GradientColor... gradientColors) {
+		if (backgroundGradientColor != null) {
+			this.backgroundGradientColor.addAll(Arrays.asList(gradientColors));
+		}
+		return (T) this;
+	}
+
 	/**
 	 * @see #setBackgroundColor(List)
 	 */
@@ -90,6 +113,21 @@ public abstract class BackgroundBorderHoverDataset<T extends BackgroundBorderHov
 	    this.backgroundColor.clear();
 	    addBackgroundColor(backgroundColor);
 	    return (T) this;
+	}
+
+
+	public T setBackgroundGradientColor(GradientColor gradientColor) {
+		this.backgroundGradientColor.clear();
+		addBackgroundGradientColor(gradientColor);
+		return (T) this;
+	}
+
+	public T setBackgroundGradientColor(List<GradientColor> gradientColors) {
+		this.backgroundGradientColor.clear();
+		if (backgroundGradientColor != null) {
+			this.backgroundGradientColor.addAll(gradientColors);
+		}
+		return (T) this;
 	}
 
 	/**
