@@ -33,6 +33,12 @@ public abstract class Scale<T extends Scale<T>> {
 	 */
 	private Boolean display;
 
+
+	/**
+	 * @see #setOffset(Boolean)
+	 */
+	private Boolean offset;
+
 	/**
 	 * @see #setPosition(ScalesPosition)
 	 */
@@ -144,6 +150,27 @@ public abstract class Scale<T extends Scale<T>> {
 	public T setDisplay(Boolean display) {
 		this.display = display;
 	    return (T) this;
+	}
+
+	/**
+	 * @see #setOffset(Boolean)
+	 */
+	public Boolean getOffset() {
+		return offset;
+	}
+
+	/**
+	 * <p>
+	 * If true, extra space is added to the both edges and the axis is scaled to fit into the chart area. This is set to true for a bar chart by default.
+	*</p>
+	 * @param offset
+	 * @return
+	 */
+
+	@SuppressWarnings("unchecked")
+	public T setOffset(Boolean offset) {
+		this.offset = offset;
+		return (T) this;
 	}
 
 	/**
