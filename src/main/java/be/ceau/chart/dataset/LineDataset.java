@@ -28,6 +28,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class LineDataset extends BaseLineDataset<LineDataset, BigDecimal> {
 
 	/**
+	 * Order of dataset
+	 */
+	private int order;
+
+	/**
 	 * Sets the backing data list to the argument, replacing any data already
 	 * added or set
 	 * 
@@ -87,4 +92,21 @@ public class LineDataset extends BaseLineDataset<LineDataset, BigDecimal> {
 		return this;
 	}
 
+	/**
+	 * Add the data order to this {@code Dataset}
+	 * @param order
+	 * @return
+	 */
+	public LineDataset setOrder(int order) {
+		this.order = order;
+		return this;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public int getOrder() {
+		return order;
+	}
 }
