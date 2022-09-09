@@ -83,6 +83,7 @@ public class DoughnutChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public DoughnutOptions getOptions() {
 		return options;
 	}

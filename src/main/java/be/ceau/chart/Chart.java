@@ -15,6 +15,8 @@
 */
 package be.ceau.chart;
 
+import be.ceau.chart.options.Options;
+
 public interface Chart {
 
 	/**
@@ -47,5 +49,7 @@ public interface Chart {
 	 *         state
 	 */
 	public boolean isDrawable();
+
+	public Options getOptions();
 
 }

@@ -84,6 +84,7 @@ public class PieChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public PieOptions getOptions() {
 		return options;
 	}

@@ -84,6 +84,7 @@ public class RadarChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public RadarOptions getOptions() {
 		return options;
 	}

@@ -83,6 +83,7 @@ public class BubbleChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public BubbleOptions getOptions() {
 		return options;
 	}

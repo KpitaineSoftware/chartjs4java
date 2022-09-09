@@ -90,6 +90,7 @@ public class BarChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public BarOptions getOptions() {
 		return options;
 	}

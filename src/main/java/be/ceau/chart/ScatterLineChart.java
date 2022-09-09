@@ -91,6 +91,7 @@ public class ScatterLineChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public LineOptions getOptions() {
 		return options;
 	}

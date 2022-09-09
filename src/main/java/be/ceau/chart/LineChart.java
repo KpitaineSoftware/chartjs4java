@@ -91,6 +91,7 @@ public class LineChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public LineOptions getOptions() {
 		return options;
 	}

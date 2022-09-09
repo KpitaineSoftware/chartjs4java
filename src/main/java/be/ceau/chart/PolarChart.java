@@ -84,6 +84,7 @@ public class PolarChart implements Chart {
 		return this;
 	}
 
+	@Override
 	public PolarOptions getOptions() {
 		return options;
 	}
