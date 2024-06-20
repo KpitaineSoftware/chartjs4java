@@ -2,61 +2,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
-    <groupId>io.gotan.os</groupId>
+    <groupId>com.kpitaine.os</groupId>
     <artifactId>chartjs4java</artifactId>
-    <version>2.6.2.4</version>
+    <version>2.6.2.5</version>
     <name>ChartJS 4 Java</name>
     <description>Java library for use with Chart.js javascript</description>
     <url>https://www.ceau.be/chart.html</url>
-    <developers>
-        <developer>
-            <name>Marceau Dewilde</name>
-            <email>m@ceau.be</email>
-        </developer>
-        <developer>
-            <name>Victor David</name>
-            <email>victor.david@gotan.io</email>
-        </developer>
-        <developer>
-            <id>damiencuvillier</id>
-            <name>Damien Cuvillier</name>
-            <email>damien@gotan.io</email>
-            <url>https://damiencuvillier.com</url>
-            <roles>
-                <role>simple contributor, packager</role>
-            </roles>
-        </developer>
-        <developer>
-            <id>loicviardcretat</id>
-            <name>Loïc Viard Crétat</name>
-            <email>loic@kpitaine.com</email>
-            <url>https://kpitaine.com</url>
-            <roles>
-                <role>maintainer,developper</role>
-            </roles>
-        </developer>
-    </developers>
-
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
             <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-    <scm>
-        <connection>scm:git@github.com:GotanDev/chartjs4java.git</connection>
-        <url>scm:git@github.com:GotanDev/chartjs4java.git</url>
-        <developerConnection>scm:git:git@github.com:GotanDev/chartjs4java.git</developerConnection>
-    </scm>
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/GotanDev/chartjs4java/issues</url>
-    </issueManagement>
+
     <distributionManagement>
         <repository>
-            <id>io.gotan.repository</id>
-            <name>Gotan Libraries</name>
-            <url>https://repository.dev.gotan.io/repository/gotan.os/</url>
+            <id>com.kpitaine.repository</id>
+            <name>Kpitaine Libraries</name>
+            <url>https://repository.kpitaine.com/repository/maven-releases</url>
         </repository>
     </distributionManagement>
 
@@ -68,17 +31,17 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>1.7.36</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.7</version>
+            <version>2.15.1</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
