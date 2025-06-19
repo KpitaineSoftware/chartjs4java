@@ -17,7 +17,7 @@
 
     <distributionManagement>
         <repository>
-            <id>com.kpitaine.repository</id>
+            <id>kpitaine-central</id>
             <name>Kpitaine Libraries</name>
             <url>https://repository.kpitaine.com/repository/maven-releases</url>
         </repository>
